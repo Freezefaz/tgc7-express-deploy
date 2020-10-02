@@ -41,7 +41,9 @@ async function main() {
   app.use('/user', require('./routes/user'));
   app.use('/api', require('./routes/api'));
 
-  app.listen(3000, () => {
+//   change to heroku setting which is 8080
+// heroku cannot run on 3000 server
+  app.listen(process.env.PORT, () => {
     console.log("Server has started");
   });
 }
